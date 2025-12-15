@@ -1,0 +1,425 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f1f1f1;
+  color: #222;
+}
+
+/* ===== GLOBAL ===== */
+.container {
+  max-width: 1000px; /* МЕНША ШИРИНА */
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ===== SECTION TITLES ===== */
+.section-title {
+  text-align: center;
+  font-size: 40px; /* ЗБІЛЬШЕНО */
+  font-weight: 700;
+  font-family: "Breul Grotesk A", sans-serif;
+  margin-bottom: 16px;
+  color: #111;
+}
+
+.section-desc {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 40px;
+  color: #555;
+  font-size: 16px;
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+  height: 42px;
+  padding: 0 22px;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn.dark {
+  background: #111;
+  color: #fff;
+  border: none;
+}
+
+.btn.outline {
+  background: transparent;
+  border: 1px solid #111;
+  color: #111;
+}
+
+/* ===== HEADER ===== */
+.header {
+  background: #1c1c1c;
+  height: 60px;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.logo {
+  color: #fff;
+  font-weight: 700;
+  font-size: 50px;
+}
+
+.nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 24px;
+  font-size: 14px;
+}
+
+/* ===== HERO ===== */
+.hero {
+  background: #E7EAEF;
+  padding: 100px 0 1px 0; /* зверху 100px, знизу 20px */
+}
+
+.hero-inner {
+  display: flex;
+  align-items: flex-start; /* щоб картинка була вгорі по своїй позиції */
+  justify-content: space-between;
+}
+
+.hero-text h1 {
+  font-size: 56px;
+  line-height: 1.2;
+}
+
+.hero-text p {
+  margin: 16px 0 24px;
+}
+
+/* Контейнер картинки */
+.hero-image {
+  position: relative;
+  width: 360px;
+  height: auto;
+  display: flex;
+  align-items: flex-start; /* можна змінювати на flex-end, center */
+  justify-content: center;
+  margin-top: 0; /* прибрано зайвий відступ */
+}
+
+.hero-image::before {
+  content: "";
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  background: #1f2528;
+  border-radius: 50%;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+}
+
+/* Картинка профілю з гнучким керуванням */
+.hero-photo {
+  position: relative;
+  z-index: 2;
+  width: auto;      /* ширина автоматична */
+  height: 550px;    /* ВИСОТА, яку можна змінювати */
+  top: 0px;         /* зміщення по вертикалі, можна міняти негатив → підняти, позитив → опустити */
+  object-fit: cover; 
+  filter: brightness(1.03) contrast(1.02);
+}
+/* ===== ABOUT ===== */
+.about {
+  background: #fff;
+  padding: 80px 0;
+}
+
+.about-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.about-title h2 {
+  font-size: 64px;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.about-content p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.about-buttons {
+  display: flex;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+/* ===== SERVICES ===== */
+.services {
+  background: #DEE1E6;
+  padding: 80px 0;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  justify-content: center;
+}
+
+.service-card {
+  background: #1c1c1c;
+  color: #fff;
+  padding: 40px 32px;
+  border-radius: 14px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
+  min-width: 260px;
+}
+
+.services-grid .service-card h3 {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.service-card p {
+  font-size: 14px;
+  line-height: 1.5;
+  max-width: 220px;
+}
+
+.service-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 12px;
+  border: 2px solid #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4px;
+}
+
+.service-icon::before {
+  content: "";
+  display: block;
+  background: #ffffff;
+}
+
+/* Іконка "екран" для Web Development */
+.icon-web-dev::before {
+  width: 26px;
+  height: 18px;
+  border-radius: 3px;
+}
+
+/* Іконка "екран зі смужкою" для Web Design */
+.icon-web-design::before {
+  width: 26px;
+  height: 18px;
+  border-radius: 3px;
+  box-shadow: 0 6px 0 #1c1c1c; /* нижня темна смужка, як панель */
+}
+
+/* Іконка "смартфон" для App Design */
+.icon-app-design::before {
+  width: 14px;
+  height: 26px;
+  border-radius: 4px;
+}
+
+/* override for image-based icons */
+.service-icon {
+  border: none;
+}
+
+.service-icon::before {
+  display: none;
+}
+
+.service-icon img {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+}
+
+/* ===== BLOG ===== */
+.blog {
+  background: #f1f1f1; /* такий самий фон, як у сторінки */
+  padding: 80px 0;
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+  justify-content: center;
+}
+
+.blog-card {
+  background: #DCDCDC; /* світліший фон картки */
+  padding: 0 28px 0 0;  /* без відступів зверху/знизу і зліва, як на макеті */
+  display: flex;
+  align-items: center;   /* центруємо вміст по вертикалі */
+  gap: 20px;
+  max-width: 430px;
+  margin: 0 auto;
+  border-radius: 10px;
+  overflow: hidden; /* щоб внутрішній прямокутник мав ті ж скруглення */
+  min-height: 160px; /* базова висота, але може рости під текст */
+}
+
+.blog-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* текст по центру вертикалі блоку */
+}
+
+.blog-thumb {
+  flex: 0 0 160px;      /* квадрат 160x160, по всій висоті картки */
+  background: #C5C5C5;  /* трохи темніший сірий всередині */
+  height: 100%;         /* по всій висоті картки */
+  border-radius: 0;     /* скруглення береться від картки через overflow:hidden */
+}
+
+.blog-content h3 {
+  font-size: 19px;
+  margin-bottom: 8px;
+}
+
+.blog-content p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* ===== CONTACT ===== */
+.contact {
+  background: #D9D9D9;
+  padding: 80px 0;
+}
+
+.contact-inner {
+  display: flex;
+  gap: 60px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.contact-top {
+  text-align: center;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.contact h3 {
+  font-size: 36px; /* ЗБІЛЬШЕНО */
+  font-weight: 700;
+  font-family: "Breul Grotesk A", sans-serif;
+  margin-bottom: 24px;
+  color: #111;
+  text-align: center;
+}
+
+.contact-subtitle {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #111;
+}
+
+.contact-form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form .form-row {
+  display: flex;
+  flex-direction: row; /* в один рядок */
+  gap: 12px;
+}
+
+.contact-form .half-input,
+.contact-form .full-input {
+  padding: 14px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #000;
+  border: none;
+  border-radius: 12px;
+}
+
+.contact-form .half-input {
+  flex: 1; /* ділять рядок порівну */
+}
+
+.contact-form .full-input {
+  margin-top: 12px;
+  min-height: 120px;
+  resize: vertical;
+  width: 100%; /* однакова ширина з верхнім рядом */
+}
+
+.btn.white {
+  background: #ffffff;
+  color: #111;
+  border: none;
+}
+
+/* ===== SOCIAL ICONS LEFT ===== */
+.contact-info .social-item {
+  display: flex;           /* робимо рядок */
+  align-items: center;     /* вертикально по центру */
+  gap: 8px;                /* відстань між іконкою та текстом */
+  margin-bottom: 10px;
+}
+
+.contact-info .social-item img {
+  width: 16px;             /* ширина іконки */
+  height: 16px;            /* висота іконки */
+  object-fit: contain;     /* щоб іконка не деформувалась */
+  flex-shrink: 0;          /* іконка не буде зменшуватись */
+}
+
+.contact-info .social-item span {
+  display: inline-block;   /* щоб текст був справа від іконки */
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: #1c1c1c;
+}
+.form-btn {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 12px;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background: #1c1c1c;
+  color: #fff;
+  text-align: center;
+  padding: 16px 0;
+}
